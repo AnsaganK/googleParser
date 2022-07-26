@@ -7,8 +7,6 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 
 from constants import SEARCH_URL, StatusChoices, PLACE_DETAIL_PAGE_URL
-from database.cities import CITY
-from database.services import SERVICE
 from services.db_service import place_save
 from services.image_service import get_base_photo, GetPhotos
 from services.info_service import get_info
@@ -216,10 +214,9 @@ def _get_city_service(city_service_id: int) -> CityService:
 if __name__ == '__main__':
     start_time = datetime.now()
     config = {
-        CITY.FARMVILLE: [SERVICE._24_HOUR_PEST_CONTROL_SERVICES, SERVICE._24_HOUR_ANIMAL_CONTROL_SERVICES],
-        CITY.ALTAVISTA: [SERVICE.ABOVE_GROUND_POOL_REPAIR, SERVICE.AIR_CONDITIONING_REPAIR]
+        'Kokshetau': ['hotels', 'schools'],
     }
     for city in config:
         for service in config[city]:
-            start_parsing(f'{service.value} in {city.value}, VA, USA', city.value, service.value)
+            start_parsing(f'{service} in {city}, VA, USA', city, service)
     print('Ended time: ', datetime.now() - start_time)

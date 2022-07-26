@@ -6659,3 +6659,59 @@ WebDriver BiDi listening on ws://localhost:50653
 1657865172728	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
 console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Ansagan\\AppData\\Local\\Temp\\rust_mozprofilexSEDXN\\search.json.mozlz4", (void 0)))
 DevTools listening on ws://localhost:50653/devtools/browser/1fb7992f-5f13-448f-9593-c2f3252ecac0
+1658174483408	geckodriver	INFO	Listening on 127.0.0.1:60741
+1658174486512	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "60742" "-no-remote" "-profile" "C:\\Users\\Ansagan\\AppData\\Local\\Temp\\rust_mozprofilerJNcvi"
+1658174487021	Marionette	INFO	Marionette enabled
+1658174487027	Marionette	INFO	Listening on port 60747
+WebDriver BiDi listening on ws://localhost:60742
+1658174487727	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Ansagan\\AppData\\Local\\Temp\\rust_mozprofilerJNcvi\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:60742/devtools/browser/42fabda2-7c64-4cd6-9b5c-bf420371b519
+1658174596519	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://remote/content/marionette/sync.js:234:19
+TimedPromise@chrome://remote/content/marionette/sync.js:219:10
+interaction.flushEventLoop@chrome://remote/content/marionette/interaction.js:431:10
+webdriverClickElement@chrome://remote/content/marionette/interaction.js:179:31
+1658174636311	geckodriver	INFO	Listening on 127.0.0.1:62270
+1658174639418	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "62271" "-no-remote" "-profile" "C:\\Users\\Ansagan\\AppData\\Local\\Temp\\rust_mozprofileGqDHfj"
+1658174639867	Marionette	INFO	Marionette enabled
+1658174639873	Marionette	INFO	Listening on port 62276
+WebDriver BiDi listening on ws://localhost:62271
+1658174640020	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Ansagan\\AppData\\Local\\Temp\\rust_mozprofileGqDHfj\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:62271/devtools/browser/2308bbb0-6604-4d0e-87de-f466de574fd0
+1658245083818	geckodriver	INFO	Listening on 127.0.0.1:64324
+1658245086963	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "64325" "-no-remote" "-profile" "C:\\Users\\Ansagan\\AppData\\Local\\Temp\\rust_mozprofileSNfvgD"
+1658245087883	Marionette	INFO	Marionette enabled
+1658245087889	Marionette	INFO	Listening on port 64330
+WebDriver BiDi listening on ws://localhost:64325
+1658245088064	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Ansagan\\AppData\\Local\\Temp\\rust_mozprofileSNfvgD\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:64325/devtools/browser/1e01987d-0162-426f-8c62-2a923e6a532c
+console.error: Region.jsm: "Error fetching region" (new Error("TIMEOUT", "resource://gre/modules/Region.jsm", 767))
+console.error: Region.jsm: "Failed to fetch region" (new Error("TIMEOUT", "resource://gre/modules/Region.jsm", 419))
+1658245731490	geckodriver	INFO	Listening on 127.0.0.1:64829
+1658245734589	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "64830" "-no-remote" "-profile" "C:\\Users\\Ansagan\\AppData\\Local\\Temp\\rust_mozprofileYEavL3"
+1658245735127	Marionette	INFO	Marionette enabled
+1658245735133	Marionette	INFO	Listening on port 64837
+WebDriver BiDi listening on ws://localhost:64830
+1658245735725	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Ansagan\\AppData\\Local\\Temp\\rust_mozprofileYEavL3\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:64830/devtools/browser/e2f910ed-96e6-4e89-905c-5f94d47c0efd
+1658245971463	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://remote/content/marionette/sync.js:234:19
+TimedPromise@chrome://remote/content/marionette/sync.js:219:10
+interaction.flushEventLoop@chrome://remote/content/marionette/interaction.js:431:10
+webdriverClickElement@chrome://remote/content/marionette/interaction.js:179:31
+1658245974695	Marionette	INFO	Stopped listening on port 64837
+[Parent 21304, IPC I/O Parent] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc:167
+1658245975406	geckodriver	INFO	Listening on 127.0.0.1:65112
+1658245978509	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "65113" "-no-remote" "-profile" "C:\\Users\\Ansagan\\AppData\\Local\\Temp\\rust_mozprofileEZICtu"
+1658245978960	Marionette	INFO	Marionette enabled
+1658245978966	Marionette	INFO	Listening on port 65119
+WebDriver BiDi listening on ws://localhost:65113
+1658245979102	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Ansagan\\AppData\\Local\\Temp\\rust_mozprofileEZICtu\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:65113/devtools/browser/50a0592c-2a86-4224-84fb-8455dc6edd0e
+1658246030343	Marionette	INFO	Stopped listening on port 65119
+[Parent 24900, IPC I/O Parent] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc:167
