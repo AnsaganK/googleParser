@@ -214,7 +214,7 @@ def _get_city_service(city_service_id: int) -> CityService:
 if __name__ == '__main__':
     start_time = datetime.now()
     config = {
-        'Kokshetau': ['hotels', 'schools'],
+        'Moscow': ['roof repair', 'schools'],
     }
     for city in config:
         for service in config[city]:
