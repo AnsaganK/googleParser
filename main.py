@@ -44,7 +44,7 @@ def strToInt(string):
 def start_parsing(search_text: str, city: str, service: str, pages: Optional[int] = None):
     """ Начало парсинга: первая страница поисковой выдачи """
 
-    driver = start_firefox(url=SEARCH_URL.format(search_text))
+    driver = start_chrome(url=SEARCH_URL.format(search_text))
     # city_service = _get_city_service(city_service_id)
     page = 1
     while page <= pages if pages else True:
@@ -122,8 +122,9 @@ def create_places(cids: list[str], city: str, service: str):
     print(cids)
     for index, cid in enumerate(cids):
         cids[index] = {'cid': cid, 'city': city, 'service': service}
-    with concurrent.futures.ThreadPoolExecutor(max_workers=len(cids)) as executor:
-        executor.map(_get_place, cids)
+        _get_place(cids[index])
+    # with concurrent.futures.ThreadPoolExecutor(max_workers=len(cids)) as executor:
+    #     executor.map(_get_place, cids)
 
 
 def _get_place(data: dict):
@@ -214,7 +215,7 @@ def _get_city_service(city_service_id: int) -> CityService:
 if __name__ == '__main__':
     start_time = datetime.now()
     config = {
-        'Moscow': ['roof repair', 'schools'],
+        'Virginia': ['roof repair', 'schools'],
     }
     for city in config:
         for service in config[city]:

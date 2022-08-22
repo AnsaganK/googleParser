@@ -10,7 +10,8 @@ class StatusChoices(Enum):
 
 
 class AvailableDrivers(Enum):
-    CHROME_PATH = 'drivers/chromedriver.exe'
+    # CHROME_PATH = 'drivers/chromedriver.exe'
+    CHROME_PATH = '/usr/local/bin/chromedriver'
     FIREFOX_PATH = 'drivers/geckodriver.exe'
 
 
