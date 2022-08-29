@@ -122,9 +122,9 @@ def create_places(cids: list[str], city: str, service: str):
     print(cids)
     for index, cid in enumerate(cids):
         cids[index] = {'cid': cid, 'city': city, 'service': service}
-        _get_place(cids[index])
-    # with concurrent.futures.ThreadPoolExecutor(max_workers=len(cids)) as executor:
-    #     executor.map(_get_place, cids)
+        # _get_place(cids[index])
+    with concurrent.futures.ThreadPoolExecutor(max_workers=len(cids)) as executor:
+        executor.map(_get_place, cids)
 
 
 def _get_place(data: dict):
