@@ -1,8 +1,10 @@
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
-from constants import AvailableDrivers
+from constants import AvailableDrivers, IS_VPS_SERVER
+
 PROXY = ''
+
 
 def start_firefox(url: str) -> webdriver:
     driver = webdriver.Firefox(executable_path=AvailableDrivers.FIREFOX_PATH.value)
@@ -10,12 +12,14 @@ def start_firefox(url: str) -> webdriver:
     return driver
 
 
-def start_chrome(url: str) -> webdriver:
+def start_chrome(url: str, is_vps: bool = False) -> webdriver:
     chrome_options = Options()
-    # chrome_options.add_argument("--headless")
-    # chrome_options.add_argument("--no-sandbox")
-    # chrome_options.add_argument("--disable-gpu")
-    # chrome_options.add_argument("--disable-software-rasterizer")
+    if is_vps:
+        chrome_options.add_argument("--headless")
+        chrome_options.add_argument("--no-sandbox")
+        chrome_options.add_argument("--disable-gpu")
+        chrome_options.add_argument("--disable-software-rasterizer")
+
     driver = webdriver.Chrome(executable_path=AvailableDrivers.CHROME_PATH.value, options=chrome_options)
     driver.get(url)
     return driver

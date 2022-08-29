@@ -6,7 +6,7 @@ from typing import Optional
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
-from constants import SEARCH_URL, StatusChoices, PLACE_DETAIL_PAGE_URL
+from constants import SEARCH_URL, StatusChoices, PLACE_DETAIL_PAGE_URL, IS_SHORT, IS_VPS_SERVER
 from services.db_service import place_save
 from services.image_service import get_base_photo, GetPhotos
 from services.info_service import get_info
@@ -44,7 +44,7 @@ def strToInt(string):
 def start_parsing(search_text: str, city: str, service: str, pages: Optional[int] = None):
     """ Начало парсинга: первая страница поисковой выдачи """
 
-    driver = start_chrome(url=SEARCH_URL.format(search_text))
+    driver = start_chrome(url=SEARCH_URL.format(search_text), is_vps=IS_VPS_SERVER)
     # city_service = _get_city_service(city_service_id)
     page = 1
     while page <= pages if pages else True:
@@ -141,16 +141,24 @@ def place_create_driver(cid: str, city: str, service: str):
     """ Открываем браузер для определенного Place по CID и получаем данные """
     start_time = datetime.now()
     url = PLACE_DETAIL_PAGE_URL.format(cid)
-    driver = start_chrome(url=url)
+    driver = start_chrome(url=url, is_vps=IS_VPS_SERVER)
 
     base_info = _get_base_info_from_place(driver)
     print(base_info)
 
     full_info = get_info(driver)
     print(full_info)
+    address = full_info.get('address')
+    if not address or city not in address:
+        print(' --- Incorrect address')
+        print(datetime.now() - start_time)
+        return None
 
-    coordinate = get_coordinate(driver)
-    print(coordinate)
+    if IS_SHORT:
+        coordinate = None
+    else:
+        coordinate = get_coordinate(driver)
+        print(coordinate)
 
     base_photo = get_base_photo(driver)
     print(base_photo)
@@ -158,8 +166,11 @@ def place_create_driver(cid: str, city: str, service: str):
     reviews = GetReviews(driver).get_reviews() if base_info.get('rating_user_count') else []
     print(reviews)
 
-    photos = GetPhotos(driver).get_photos()
-    print(photos)
+    if IS_SHORT:
+        photos = []
+    else:
+        photos = GetPhotos(driver).get_photos()
+        print(photos)
 
     print(datetime.now() - start_time)
     print()
@@ -215,7 +226,7 @@ def _get_city_service(city_service_id: int) -> CityService:
 if __name__ == '__main__':
     start_time = datetime.now()
     config = {
-        'Virginia': ['roof repair', 'schools'],
+        'Crewe': ['roof repair', 'schools'],
     }
     for city in config:
         for service in config[city]:
